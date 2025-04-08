@@ -3,85 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pobranie danych</title>
+    <title>Document</title>
+    <style>
+    img {
+        width: 280px;
+        height: 250px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Kalkulator</h1>
-    Podaj liczbę: <input id="a"><br>
-    Podaj liczbę: <input id="b"><br>
+    <h1>Algorytmy</h1>
+    <ul>
+        <li><a href="#">Strona główna</a></li>
+        <li><a href="1.html">Silnia</a></li>
+        <li><a href="2.html">Dodawanie do 100</a></li>
+    </ul>
+    <img src="Białypotwór.webp"> <br>
+    Podaj liczbę <input type="number" id="a"> 
+    <button id="button">Oblicz silnie</button>
     <p id="wynik"></p>
-    <button onclick="dodaj()">dodaj</button><br>
-    <button onclick="odejmij()">odejmij</button><br>
-    <button onclick="pomnoz()">pomnóż</button><br>
-    <button onclick="dziel()">dziel</button><br>
-    <button onclick="poteguj()">potęguj</button><br>
-    <p id="wynik"></p>
-   
+
     <script>
-  
- 
-        function dodaj()
+        var przycisk = document.getElementById("button");
+        przycisk.addEventListener("click", function() {
+            let a = document.getElementById("a").value;
+            let wynik = document.getElementById("wynik");
+            let s=1;
+            if(a>=0)
         {
-            var a=parseFloat(document.getElementById('a').value);
-        var b=parseFloat(document.getElementById('b').value);
-        console.log(a);
-        console.log(b);
-        var wynik=document.getElementById('wynik');
-       
-            wynik.innerHTML="Wynik = "+(a+b);
-       
+            for ( var i=1; i<=a ; i++)
+            s=s*1;
+        wynik.innerHTML=a+"!="+s;
         }
-        
-        function odejmij()
-        {
-            var a=parseFloat(document.getElementById('a').value);
-        var b=parseFloat(document.getElementById('b').value);
-        console.log(a);
-        console.log(b);
-        var wynik=document.getElementById('wynik');
-       
-            wynik.innerHTML="Wynik = "+(a-b);
-       
-        }
-
-        
-        function pomnoz()
-        {
-            var a=parseFloat(document.getElementById('a').value);
-        var b=parseFloat(document.getElementById('b').value);
-        console.log(a);
-        console.log(b);
-        var wynik=document.getElementById('wynik');
-       
-            wynik.innerHTML="Wynik = "+(a*b);
-       
-        }
-
-        
-        function dziel()
-        {
-            var a=parseFloat(document.getElementById('a').value);
-        var b=parseFloat(document.getElementById('b').value);
-        console.log(a);
-        console.log(b);
-        var wynik=document.getElementById('wynik');
-       
-            wynik.innerHTML="Wynik = "+(a/b);
-       
-        }
-
-         
-        function poteguj()
-        {
-            var a=parseFloat(document.getElementById('a').value);
-        var b=parseFloat(document.getElementById('b').value);
-        console.log(a);
-        console.log(b);
-        var wynik=document.getElementById('wynik');
-       
-            wynik.innerHTML="Wynik = "+(a**b);
-       
-        }
+        else
+        wynik.innerText="Podaj liczbę naturalną";
+        })
     </script>
 </body>
 </html>
